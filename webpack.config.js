@@ -12,11 +12,16 @@ var config = {
   devtool: debug ? "inline-sourcemap" : false,
   entry: APP_DIR + '/index.jsx',
   watch: true,
+
+  // target: "node",
+  node: {
+    fs: "empty"
+  },
+
   output: {
     path: BUILD_DIR,
     filename: "client.min.js"
   },
-
   module : {
     loaders : [
       {
@@ -59,12 +64,16 @@ var config = {
       }
     }
   },
-
-  plugins: debug ? [] : [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-  ],
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    })
+  ]
+  // plugins: debug ? [] : [
+  //   new webpack.optimize.DedupePlugin(),
+  //   new webpack.optimize.OccurrenceOrderPlugin(),
+  //   new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+  // ],
 }
 
 module.exports = config;

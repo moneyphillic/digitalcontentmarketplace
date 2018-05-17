@@ -11,6 +11,10 @@ const changePage = (page = 'Intro', action) => {
 			break;
 		case 'intro_page':
 			page = 'Intro';
+			break;
+		case 'shareholder_page':
+			page = 'Shareholder';
+			break;
 		default:
 			page = 'Intro';
 			break;

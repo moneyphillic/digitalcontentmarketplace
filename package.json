@@ -1,7 +1,7 @@
 {
-  "name": "ethereumpayment",
+  "name": "digitalcontentmarketplace",
   "version": "1.0.0",
-  "description": "Ethereum payment with metamask",
+  "description": "Digital content marketplace",
   "homepage": "",
   "author": {
     "name": "moneyphillic",
@@ -36,8 +36,10 @@
     "react-dom": "^15.6.1",
     "react-file-reader": "^1.1.4",
     "react-redux": "^5.0.7",
+    "react-thunk": "^1.0.0",
     "read-file": "^0.2.0",
     "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.2",
     "request": "^2.81.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",

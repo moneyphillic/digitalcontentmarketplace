@@ -27,7 +27,7 @@ body{
 .main-container .aside-menu {
 	display: table-cell;
 	width: 25%;
-	background-color: #eee;
+	background-color: #ddd;
 	padding: 40px;
   height: 100vh;
 }
@@ -39,4 +39,34 @@ body{
 .wrapper {
 	width: 75%;
 	padding: 40px;
+}
+
+.wrapper .content p {
+  line-height: 25px;
+  padding-bottom: 5px;
+}
+
+.grey-box {
+  background-color: #eee;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.grey-box img {
+  width: 98%;
+  margin: 1%;
+}
+
+.buy-button {
+  width: 120px;
+  height: 40px;
+  background-color: #DA5F29;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  font-size: 16px;
+}
+
+.buy-button:hover {
+  cursor: pointer;
 }
