@@ -58,7 +58,7 @@ class ProductContent extends Component {
         Price: 0.1 ETH <br />
         </p>
         <p>
-        <button className="buy-button" onClick={ () => this.buy(this.state.seller, this.state.stock) }>BUY</button>
+        <button className="standart-btn orange-btn" onClick={ () => this.buy(this.state.seller, this.state.stock) }>BUY</button>
         </p>
       </div>
     )

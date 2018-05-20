@@ -22,6 +22,15 @@ const changePage = (page = 'Intro', action) => {
 	return page;
 }
 
+// const getShareholderInfo = (shareholder = {share: 0, vote: false}, action) => {
+// 	switch(action.type) {
+// 		case: 'shareholder_info';
+// 			shareholder = {
+//
+// 			}
+// 	}
+// }
+
 const reducers = combineReducers({
 	page: changePage
 })

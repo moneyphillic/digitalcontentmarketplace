@@ -14,6 +14,10 @@ let SHAREHOLDER_PAGE = {
 	type: 'shareholder_page'
 }
 
+let SHAREHOLDER_INFO = {
+	type: 'shareholder_info'
+}
+
 const actions = {
 	CONTRACT_PAGE: CONTRACT_PAGE,
 	PRODUCT_PAGE: PRODUCT_PAGE,
