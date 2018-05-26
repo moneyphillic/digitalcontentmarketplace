@@ -94,14 +94,12 @@ class ShareholderContent extends Component {
         </p>
         <div className="grey-box">
           <h4>Transfer share</h4>
-          <div>
+          <div className="form-control">
             <label for="transfer_to">To:</label>
-            <br />
             <input type="text" name="transfer_to" id="transfer_to" value={this.state.transfer_to} onChange={this.handleTransferTo} />
           </div>
-          <div>
+          <div className="form-control">
             <label for="transfer_amount">Amount</label>
-            <br />
             <input type="number" name="transfer_amount" id="transfer_amount" value={this.state.transfer_amount} onChange={this.handleTransferAmount}/>
           </div>
           <br />

@@ -81,5 +81,11 @@ body{
 }
 
 .grey-box label {
+  display: block;
   padding-bottom: 4px;
+}
+
+.form-control {
+  display: block;
+  padding: 8px 0px;
 }
