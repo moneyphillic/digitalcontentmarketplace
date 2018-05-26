@@ -15,14 +15,19 @@ let SHAREHOLDER_PAGE = {
 }
 
 let SHAREHOLDER_INFO = {
-	type: 'shareholder_info'
+	type: 'shareholder_page'
+}
+
+let REGISTRATION_PAGE = {
+	type: 'registration_page'
 }
 
 const actions = {
 	CONTRACT_PAGE: CONTRACT_PAGE,
 	PRODUCT_PAGE: PRODUCT_PAGE,
 	INTRO_PAGE: INTRO_PAGE,
-	SHAREHOLDER_PAGE: SHAREHOLDER_PAGE
+	SHAREHOLDER_PAGE: SHAREHOLDER_PAGE,
+	REGISTRATION_PAGE: REGISTRATION_PAGE
 }
 
 export default actions;

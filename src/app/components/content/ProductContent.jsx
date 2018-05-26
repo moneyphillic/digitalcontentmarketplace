@@ -30,7 +30,6 @@ class ProductContent extends Component {
     this.state.contractInstance = Contract.at('0x14EFb4030bd40ec4bBfEa63537d609dEfC05E085');
   }
 
-
   buy(seller, stock) {
     this.state.contractInstance.purchase(seller, stock, {
       gasPrice: 300000,

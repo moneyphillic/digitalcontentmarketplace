@@ -15,21 +15,24 @@ const changePage = (page = 'Intro', action) => {
 		case 'shareholder_page':
 			page = 'Shareholder';
 			break;
+		case 'registration_page':
+			page = 'Registration';
+			break;
+		case 'login_page':
+			page = 'Login';
+			break;
+		case 'user_page':
+			page = 'User';
+			break;
+		case 'products_page':
+			page = 'Products';
+			break;
 		default:
 			page = 'Intro';
 			break;
 	}
 	return page;
 }
-
-// const getShareholderInfo = (shareholder = {share: 0, vote: false}, action) => {
-// 	switch(action.type) {
-// 		case: 'shareholder_info';
-// 			shareholder = {
-//
-// 			}
-// 	}
-// }
 
 const reducers = combineReducers({
 	page: changePage

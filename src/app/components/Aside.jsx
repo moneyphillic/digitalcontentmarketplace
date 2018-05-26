@@ -34,10 +34,10 @@ class Aside extends Component {
 					<p onClick={ () => this.changePage('contract_page') } >Contract</p>
 					<p onClick={ () => this.changePage('product_page') } >Product page</p>
 					<p onClick={ () => this.changePage('shareholder_page') } >Shareholder</p>
-					<p>Register</p>
-					<p>Login</p>
-					<p>User</p>
-					<p>Products</p>
+					<p onClick={ () => this.changePage('registration_page') }>Registration</p>
+					<p onClick={ () => this.changePage('login_page') }>Login</p>
+					<p onClick={ () => this.changePage('user_page') }>User</p>
+					<p onClick={ () => this.changePage('products_page') }>Products</p>
 					<p onClick={ () => {console.log(this.props.page)} } >Show state</p>
 				</div>
 			</aside>

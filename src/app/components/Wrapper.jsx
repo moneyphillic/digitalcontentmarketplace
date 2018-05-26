@@ -7,6 +7,10 @@ import IntroContent from './content/IntroContent.jsx';
 import ContractContent from './content/ContractContent.jsx';
 import ProductContent from './content/ProductContent.jsx';
 import ShareholderContent from './content/ShareholderContent.jsx';
+import RegistrationContent from './content/RegistrationContent.jsx';
+import LoginContent from './content/LoginContent.jsx';
+import UserContent from './content/UserContent.jsx';
+import ProductsContent from './content/ProductsContent.jsx';
 
 const mapStateToProps = (state, ownProps) => {
 	return {
@@ -32,6 +36,18 @@ class Wrapper extends Component {
 				break;
 			case 'Shareholder':
 				return <ShareholderContent />
+				break;
+			case 'Registration':
+				return <RegistrationContent />
+				break;
+			case 'Login':
+				return <LoginContent />
+				break;
+			case 'User':
+				return <UserContent />
+				break;
+			case 'Products':
+				return <ProductsContent />
 				break;
 			default:
 				return <IntroContent />
