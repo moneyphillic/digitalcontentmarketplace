@@ -57,6 +57,7 @@ class Wrapper extends Component {
 	}
 
 	render() {
+		console.log(this.props.page);
 		return (
 			<div className="wrapper">
 				<h4> / {this.props.page}</h4>

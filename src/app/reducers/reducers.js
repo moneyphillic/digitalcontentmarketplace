@@ -27,9 +27,9 @@ const changePage = (page = 'Intro', action) => {
 		case 'products_page':
 			page = 'Products';
 			break;
-		default:
-			page = 'Intro';
-			break;
+		// default:
+		// 	page = 'Intro';
+		// 	break;
 	}
 	return page;
 }
