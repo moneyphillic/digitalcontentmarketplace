@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import './../../../public/css/main.css';
 import actions from '../../actions/actions.js';
 import { connect } from 'react-redux';
-import axios from 'axios';
-
-const mapDispatchToProps = (dispatch) => ({
-	register: (t) => {
-
-	}
-})
 
 class RegistrationContent extends Component {
 
@@ -94,8 +87,4 @@ class RegistrationContent extends Component {
   }
 }
 
-// export default RegistrationContent;
-
-export default connect(
-  mapDispatchToProps
-)(RegistrationContent);
+export default RegistrationContent;
