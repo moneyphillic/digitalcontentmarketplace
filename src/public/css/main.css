@@ -89,3 +89,11 @@ body{
   display: block;
   padding: 8px 0px;
 }
+
+.err-txt {
+  color: red;
+}
+
+.scs-txt {
+  color: green;
+}

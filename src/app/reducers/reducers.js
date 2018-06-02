@@ -1,6 +1,11 @@
 import { combineReducers } from "redux";
 // import IntroContent from '../components/content/IntroContent.jsx';
 
+const initialRegState = {
+	email: '',
+	password: ''
+}
+
 const changePage = (page = 'Intro', action) => {
 	switch(action.type) {
 		case 'contract_page':
@@ -33,6 +38,13 @@ const changePage = (page = 'Intro', action) => {
 	}
 	return page;
 }
+
+// const registerAction = (state = initialRegState, action) {
+// 	switch(action.type) {
+// 		case REG_FAILED:
+//
+// 	}
+// }
 
 const reducers = combineReducers({
 	page: changePage
