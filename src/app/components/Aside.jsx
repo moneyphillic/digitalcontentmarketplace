@@ -7,12 +7,16 @@ import './../../public/css/main.css';
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		page: state.page
+		page: state.page,
+		userStatus: state.userStatus
 	}
 }
 
 const mapDispatchToProps = (dispatch) => ({
 	onChangePage: (t) => {
+		dispatch({type: t})
+	},
+	onChangeLogStatus: (t) => {
 		dispatch({type: t})
 	}
 })
@@ -26,6 +30,10 @@ class Aside extends Component {
 		this.props.onChangePage(page);
 	}
 
+	changeLogStatus(userStatus) {
+    this.props.onChangeLogStatus(false);
+  }
+
 	render() {
 		return (
 			<aside className="aside-menu">
@@ -38,7 +46,8 @@ class Aside extends Component {
 					<p onClick={ () => this.changePage('login_page') }>Login</p>
 					<p onClick={ () => this.changePage('user_page') }>User</p>
 					<p onClick={ () => this.changePage('products_page') }>Products</p>
-					<p onClick={ () => {console.log(this.props.page)} } >Show state</p>
+					<p onClick={ () => this.changeLogStatus(false) }>Logout</p>
+					<p onClick={ () => {console.log(this.props)} } >Show state</p>
 				</div>
 			</aside>
 		);

@@ -1,9 +1,22 @@
 import { combineReducers } from "redux";
 // import IntroContent from '../components/content/IntroContent.jsx';
 
-const initialRegState = {
+const initialUserStatus = {
+	loggedIn: false,
 	email: '',
-	password: ''
+	role: ''
+}
+
+const changeLogStatus = (userStatus = initialUserStatus, action) => {
+	switch(action.type) {
+		case true:
+			userStatus = {loggedIn: true, email: '', role: ''};
+			break;
+		case false:
+			userStatus = {loggedIn: false, email: '', role: ''};
+			break;
+	}
+	return userStatus;
 }
 
 const changePage = (page = 'Intro', action) => {
@@ -32,22 +45,13 @@ const changePage = (page = 'Intro', action) => {
 		case 'products_page':
 			page = 'Products';
 			break;
-		// default:
-		// 	page = 'Intro';
-		// 	break;
 	}
 	return page;
 }
 
-// const registerAction = (state = initialRegState, action) {
-// 	switch(action.type) {
-// 		case REG_FAILED:
-//
-// 	}
-// }
-
 const reducers = combineReducers({
-	page: changePage
+	page: changePage,
+	userStatus: changeLogStatus
 })
 
 export default reducers;

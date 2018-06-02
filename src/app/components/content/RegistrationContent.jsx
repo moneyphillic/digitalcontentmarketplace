@@ -51,7 +51,7 @@ class RegistrationContent extends Component {
   		})
   		.catch(err => {
         console.log('request failed', err);
-       })
+      })
     } else {
       this.setState({message: error, message_class: 'err-txt'});
     }
