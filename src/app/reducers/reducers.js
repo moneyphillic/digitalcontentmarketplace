@@ -19,6 +19,25 @@ const changeLogStatus = (userStatus = initialUserStatus, action) => {
 	return userStatus;
 }
 
+const initialUserData = {
+	id: '',
+	email: '',
+	username: '',
+	ethaddress: ''
+}
+
+const changeUserData = (userData = initialUserData, action) => {
+	switch(action.type) {
+		case true:
+			userData = {id: action.id, email: action.email, username: action.username, ethaddress: action.ethaddress};
+			break;
+		case false:
+			userData = initialUserData;
+			break;
+	}
+	return userData;
+}
+
 const changePage = (page = 'Intro', action) => {
 	switch(action.type) {
 		case 'contract_page':
@@ -51,7 +70,8 @@ const changePage = (page = 'Intro', action) => {
 
 const reducers = combineReducers({
 	page: changePage,
-	userStatus: changeLogStatus
+	userStatus: changeLogStatus,
+	userData: changeUserData
 })
 
 export default reducers;

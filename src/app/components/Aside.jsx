@@ -8,7 +8,8 @@ import './../../public/css/main.css';
 const mapStateToProps = (state, ownProps) => {
 	return {
 		page: state.page,
-		userStatus: state.userStatus
+		userStatus: state.userStatus,
+		userData: state.userData
 	}
 }
 
@@ -24,6 +25,9 @@ const mapDispatchToProps = (dispatch) => ({
 class Aside extends Component {
 	constructor(props) {
   	super(props);
+
+		// TO DO
+		// Check for current user shares and show/hide shareholder's page
 	}
 
 	changePage(page) {

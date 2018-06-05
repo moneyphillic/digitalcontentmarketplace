@@ -7,13 +7,17 @@ import reducers from '../../reducers/reducers.js';
 const mapStateToProps = (state, ownProps) => {
 	return {
 		page: state.page,
-		userStatus: state.userStatus
+		userStatus: state.userStatus,
+		userData: state.userData
 	}
 }
 
 const mapDispatchToProps = (dispatch) => ({
 	onChangeLogStatus: (t) => {
 		dispatch({type: t})
+	},
+	changeUserData: (t, id, email, username, ethaddress) => {
+		dispatch({type: t, id: id, email: email, username: username, ethaddress: ethaddress})
 	}
 })
 
@@ -28,6 +32,10 @@ class LoginContent extends Component {
     this.handleUserData = this.handleUserData.bind(this);
   }
 
+	componentDidMount() {
+		// this.getUserData();
+	}
+
   handleUserData(e, el) {
     this.setState(el);
   }
@@ -40,11 +48,12 @@ class LoginContent extends Component {
       },
       method: 'POST',
       body: JSON.stringify({
-        email: userData.email,
+        _username: userData.email,
         password: userData.password
       })
     })
     .then(response => {
+			// On successfull login execute this.getUserData
       console.log(response);
     })
     .catch(err => {
@@ -54,7 +63,23 @@ class LoginContent extends Component {
 
   changeLogStatus(userStatus) {
     this.props.onChangeLogStatus(true);
+		// On successfull login remove getUserData from here
+		this.getUserData();
   }
+
+	getUserData = () => {
+			fetch('http://localhost:8000/getuserdata')
+	    .then(response => {
+				return response.json();
+	    })
+			.then(json => {
+				var user = json.user;
+				this.props.changeUserData(true, user.id, user.email, user.username, user.ethAddress);
+			})
+	    .catch(err => {
+	      console.log('request failed', err);
+	    });
+	}
 
   render() {
     return (
