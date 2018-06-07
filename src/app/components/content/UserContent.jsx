@@ -52,7 +52,7 @@ class UserContent extends Component {
     const data = new FormData();
     data.append('file', this.state.selectedFile);
     data.append('user', this.props.userData.id);
-    data.append('price' this.state.price);
+    data.append('price', this.state.price);
 
     fetch('http://localhost:8000/uploadartwork', {
       mode: 'no-cors',
