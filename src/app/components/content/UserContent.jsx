@@ -49,14 +49,17 @@ class UserContent extends Component {
   }
 
   uploadFile = () => {
-    const data = new FormData();
+    var data = new FormData();
     data.append('file', this.state.selectedFile);
     data.append('user', this.props.userData.id);
     data.append('price', this.state.price);
 
-    fetch('http://localhost:8000/uploadartwork', {
+    fetch('http://localhost:8000/uploadimage', {
       mode: 'no-cors',
       method: 'POST',
+      headers: {
+        'Accept': 'application/json'
+      },
       body: data
     })
     .then((res) => {

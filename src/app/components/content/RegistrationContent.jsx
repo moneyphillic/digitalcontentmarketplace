@@ -33,18 +33,16 @@ class RegistrationContent extends Component {
     }
 
     if (typeof error === 'undefined') {
+      var data = new FormData();
+      data.append('email', userData.email);
+      data.append('username', userData.username);
+      data.append('password', userData.password);
+      data.append('ethaddress', userData.eth_address);
+
       fetch('http://localhost:8000/register', {
         mode: 'no-cors',
-        headers: {
-          'Accept': 'application/json'
-        },
         method: 'POST',
-  			body: JSON.stringify({
-  				email: userData.email,
-          username: userData.username,
-  				password: userData.password,
-          ethaddress: userData.eth_address
-  			})
+  			body: data
   		})
   		.then(response => {
         this.setState({message: 'Your registration was successfull!', message_class: 'scs-txt'});
