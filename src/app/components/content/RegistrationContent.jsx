@@ -45,7 +45,8 @@ class RegistrationContent extends Component {
   			body: data
   		})
   		.then(response => {
-        this.setState({message: 'Your registration was successfull!', message_class: 'scs-txt'});
+        // this.setState({message: 'Your registration was successfull!', message_class: 'scs-txt'});
+        console.log(response);
   		})
   		.catch(err => {
         console.log('request failed', err);

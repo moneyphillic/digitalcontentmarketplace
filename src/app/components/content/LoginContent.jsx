@@ -41,43 +41,44 @@ class LoginContent extends Component {
   }
 
   login = (userData) => {
-    fetch('http://localhost:8000/login', {
-      mode: 'no-cors',
-      headers: {
-        'Accept': 'application/json'
-      },
+		var data = new FormData();
+		data.append('_username', userData.email);
+		data.append('_password', userData.password);
+
+    fetch('http://localhost:8000/customlogin', {
       method: 'POST',
-      body: JSON.stringify({
-        _username: userData.email,
-        password: userData.password
-      })
+			body: data
     })
     .then(response => {
 			// On successfull login execute this.getUserData
-      console.log(response);
+			return response.json();
     })
+		.then(json => {
+			var userid = json.response.userid;
+			this.getUserData(userid);
+		})
     .catch(err => {
-      console.log('request failed', err);
+      console.log('Login request failed', err);
     })
   }
 
   changeLogStatus(userStatus) {
     this.props.onChangeLogStatus(true);
-		// On successfull login remove getUserData from here
-		this.getUserData();
   }
 
-	getUserData = () => {
-			fetch('http://localhost:8000/getuserdata')
+	getUserData = (userid) => {
+
+			fetch('http://localhost:8000/getuserdata?userid=' + userid)
 	    .then(response => {
 				return response.json();
 	    })
 			.then(json => {
+				console.log(json.user)
 				var user = json.user;
 				this.props.changeUserData(true, user.id, user.email, user.username, user.ethAddress);
 			})
 	    .catch(err => {
-	      console.log('request failed', err);
+	      console.log('getUserData request failed', err);
 	    });
 	}
 
@@ -95,7 +96,7 @@ class LoginContent extends Component {
             <input type="text" name="password" id="password" value={this.state.password} onChange={ (e) => this.handleUserData(e, {password: e.target.value}) } />
           </div>
           <br />
-          <button className="standart-btn" onClick={ () => this.changeLogStatus(true) }>Login</button>
+          <button className="standart-btn" onClick={ () => this.login(this.state) }>Login</button>
         </div>
       </div>
     )
