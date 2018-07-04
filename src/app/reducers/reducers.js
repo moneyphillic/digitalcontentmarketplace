@@ -68,10 +68,28 @@ const changePage = (page = 'Intro', action) => {
 	return page;
 }
 
+const initialFormState = {
+	state: 'closed',
+	form: null
+}
+
+const executeFormControl = (formState = initialFormState, action) => {
+	switch(action.type) {
+		case 'open':
+			formState = {state: action.state, form: action.form };
+			break;
+		case 'close':
+			formState = {state: action.state, form: action.form};
+			break;
+	}
+	return formState;
+}
+
 const reducers = combineReducers({
 	page: changePage,
 	userStatus: changeLogStatus,
-	userData: changeUserData
+	userData: changeUserData,
+	formState: executeFormControl
 })
 
 export default reducers;

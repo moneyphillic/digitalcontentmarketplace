@@ -67,7 +67,6 @@ class LoginContent extends Component {
   }
 
 	getUserData = (userid) => {
-
 			fetch('http://localhost:8000/getuserdata?userid=' + userid)
 	    .then(response => {
 				return response.json();

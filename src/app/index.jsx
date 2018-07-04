@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import Web3 from 'web3';
 import { Provider, connect } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+import $ from 'jquery';
 // import { composeWithDevTools } from 'redux-devtools-extension';
 // import thunk from 'redux-thunk';
 
 import './../public/css/main.css';
+import './../public/js/custom.js';
 
 import App from './components/app.jsx';
 

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Header from './Header.jsx';
 import Aside from './Aside.jsx';
 import Wrapper from './Wrapper.jsx';
+import FormContainer from './FormContainer.jsx';
 
 const mapStateToProps = (state, ownProps) => {
 	return {
@@ -22,10 +23,11 @@ class App extends Component {
 		return (
 			<div className="home">
 				<Header />
-				<div className="main-container">
+				<FormContainer />
+				{/*<div className="main-container">
 					<Aside />
 					<Wrapper />
-				</div>
+				</div>*/}
 			</div>
 		);
 	}
